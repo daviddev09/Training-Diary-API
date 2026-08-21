@@ -59,7 +59,7 @@ cd Training-Diary-API
 cp .env.example .env
 
 # Запустить контейнеры
-docker-compose up --build
+docker compose up --build
 ```
 
 API будет доступен по адресу http://localhost:8000

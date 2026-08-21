@@ -34,7 +34,7 @@ services:
     env_file:
       - .env
     environment:
-      DATABASE_URL: postgresql:asyncpg://postgres:postgres@db:5432/training_diary
+      DATABASE_URL: postgresql+asyncpg://postgres:postgres@db:5432/training_diary
       REDIS_HOST: redis
       REDIS_PORT: 6379
     healthcheck:
@@ -57,7 +57,7 @@ services:
     build: .
     command: celery -A app.workers.celery_app.app worker --loglevel=info
     environment:
-      DATABASE_URL: postgresql:asyncpg://postgres:postgres@db:5432/training_diary
+      DATABASE_URL: postgresql+asyncpg://postgres:postgres@db:5432/training_diary
       REDIS_HOST: redis
       REDIS_PORT: 6379
     depends_on:
